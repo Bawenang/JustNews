@@ -65,15 +65,11 @@
 		};
 		F83C735E2CE593AB005C681A /* JustNewsTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = JustNewsTests;
 			sourceTree = "<group>";
 		};
 		F83C73682CE593AB005C681A /* JustNewsUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = JustNewsUITests;
 			sourceTree = "<group>";
 		};
@@ -117,7 +113,6 @@
 				1BEC244628B271B99516918E /* Pods-JustNewsUITests.debug.xcconfig */,
 				D017C77DA7EFFF5DA87A4C59 /* Pods-JustNewsUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
