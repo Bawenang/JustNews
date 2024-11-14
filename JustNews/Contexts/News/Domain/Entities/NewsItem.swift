@@ -11,6 +11,7 @@ struct NewsItem {
     let id: Int
     let title: String
     let content: String
+    let publishDate: Date?
     let thumbnail: URL?
     let image: URL?
 }
