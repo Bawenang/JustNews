@@ -1,5 +1,6 @@
 PODS:
   - Kingfisher (8.1.0)
+  - R.swift.Library (5.4.0)
   - RxBlocking (6.6.0):
     - RxSwift (= 6.6.0)
   - RxCocoa (6.6.0):
@@ -10,6 +11,14 @@ PODS:
   - RxSwift (6.6.0)
   - RxTest (6.6.0):
     - RxSwift (= 6.6.0)
+  - SegueManager (5.0.0):
+    - SegueManager/iOS (= 5.0.0)
+    - SegueManager/OSX (= 5.0.0)
+    - SegueManager/R.swift (= 5.0.0)
+  - SegueManager/iOS (5.0.0)
+  - SegueManager/R.swift (5.0.0):
+    - R.swift.Library
+    - SegueManager/iOS
   - SwiftLint (0.57.0)
   - Swinject (2.9.1)
 
@@ -19,30 +28,35 @@ DEPENDENCIES:
   - RxCocoa (= 6.6.0)
   - RxSwift (= 6.6.0)
   - RxTest (= 6.6.0)
+  - SegueManager
   - SwiftLint
   - Swinject
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - R.swift.Library
     - RxBlocking
     - RxCocoa
     - RxRelay
     - RxSwift
     - RxTest
+    - SegueManager
     - SwiftLint
     - Swinject
 
 SPEC CHECKSUMS:
   Kingfisher: dfbf20b6249ed4ef6f18d6a96c847bce860bdb95
+  R.swift.Library: ec2a58e16269e14a9a74b0f2a6237641cbff4555
   RxBlocking: fbd1f8501443024f686e556f36dac79b0d5f4d7c
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   RxTest: a23f26bb53a5e146a0a69db4f0fa0b69001ce7f4
+  SegueManager: e45796f7351504686468d3777ec614a1f5056365
   SwiftLint: eb47480d47c982481592c195c221d11013a679cc
   Swinject: a827d508c6270da03ec74e558e728917a888fa9b
 
-PODFILE CHECKSUM: d36a28a1cb285d4509ade338472922f2f0feda24
+PODFILE CHECKSUM: 264ce2589c0bc56ddd80c8e9c72fb69eec065d20
 
 COCOAPODS: 1.16.2

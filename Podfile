@@ -10,6 +10,7 @@ target 'JustNews' do
   pod 'Swinject'
   pod 'SwiftLint'
   pod 'Kingfisher', '~> 8.0'
+  pod 'SegueManager'
 end
 
 target 'JustNewsTests' do
