@@ -2,15 +2,14 @@
 use_frameworks!
 
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '13.0'
 
 target 'JustNews' do
-  
-  # Pods for bimb-authenticate-ios
   pod 'RxSwift', '6.6.0'
   pod 'RxCocoa', '6.6.0'
   pod 'Swinject'
   pod 'SwiftLint'
+  pod 'Kingfisher', '~> 8.0'
 end
 
 target 'JustNewsTests' do

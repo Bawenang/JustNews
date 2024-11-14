@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsListTableViewCell: UITableViewCell {
 
@@ -16,6 +17,7 @@ class NewsListTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     public func setup(news: NewsItem) {
+        thumbnailImageView.kf.setImage(with: news.thumbnail)
         titleLabel.text = news.title
         descriptionLabel.text = news.content
         let dateFormatter = DateFormatter()
