@@ -13,7 +13,8 @@ import SegueManager
 class NewsListViewController: UITableViewController, SeguePerformer {
     
     private let viewModel: NewsListViewModel = {
-        let getNews = MockGetNews()
+        let newsItemRepo = NewsItemRepository()
+        let getNews = GetNews(newsItemRepo: newsItemRepo)
         return NewsListViewModel(getNews: getNews)
     }()
     
