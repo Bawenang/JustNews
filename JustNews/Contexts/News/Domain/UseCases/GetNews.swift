@@ -19,7 +19,7 @@ class MockGetNews: GetNewsUseCase {
             title: "Test",
             headline: "Test Headline",
             content: "Teststststa",
-            publishDate: Date.now,
+            publishDate: "31/12/2019 05:40:30",
             thumbnail: URL(string: "https://dummyimage.com/200x200/753b01/suspendisse.png&text=jsonplaceholder.org"),
             image: URL(string: "https://dummyimage.com/800x430/753b01/suspendisse.png&text=jsonplaceholder.org")
         )

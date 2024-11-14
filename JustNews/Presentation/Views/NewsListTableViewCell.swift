@@ -20,13 +20,7 @@ class NewsListTableViewCell: UITableViewCell {
         thumbnailImageView.kf.setImage(with: news.thumbnail)
         titleLabel.text = news.title
         descriptionLabel.text = news.content
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy - HH:mm"
-        if let date = news.publishDate {
-            dateLabel.text = dateFormatter.string(from: date)
-        } else {
-            dateLabel.text = ""
-        }
+        dateLabel.text = news.publishDate
     }
     
     override func awakeFromNib() {

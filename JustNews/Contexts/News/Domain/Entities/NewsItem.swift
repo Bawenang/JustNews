@@ -12,7 +12,7 @@ struct NewsItem {
     let title: String
     let headline: String
     let content: String
-    let publishDate: Date?
+    let publishDate: String
     let thumbnail: URL?
     let image: URL?
 }

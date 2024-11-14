@@ -25,13 +25,7 @@ class NewsStoryViewController: UIViewController {
             title = news.title
             headlineLabel.text = news.headline
             contentTextView.text = news.content
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
-            if let date = news.publishDate {
-                dateLabel.text = dateFormatter.string(from: date)
-            } else {
-                dateLabel.text = ""
-            }
+            dateLabel.text = news.publishDate
         }
     }
     
