@@ -11,7 +11,7 @@ import RxSwift
 
 class NewsListViewController: UITableViewController {
     
-    private var viewModel: NewsListViewModel = {
+    private let viewModel: NewsListViewModel = {
         let getNews = MockGetNews()
         return NewsListViewModel(getNews: getNews)
     }()
@@ -23,6 +23,7 @@ class NewsListViewController: UITableViewController {
         super.viewDidLoad()
         
         setupViewModel()
+        setupTableView()
         
         viewModel.viewLoad.accept(())
 
@@ -37,12 +38,12 @@ class NewsListViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return newsList.count
     }
 
     private func setupViewModel() {
@@ -52,16 +53,23 @@ class NewsListViewController: UITableViewController {
         })
         .disposed(by: disposeBag)
     }
+    
+    private func setupTableView() {
+        tableView.register(UINib(nibName: "NewsListTableViewCell", bundle: nil), forCellReuseIdentifier: "newsListTableViewCell")
+    }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsListTableViewCell", for: indexPath)
 
-        // Configure the cell...
-
+        if let newsListCell = cell as? NewsListTableViewCell {
+            newsListCell.setup(news: newsList[indexPath.row])
+        }
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
 
     /*
     // Override to support conditional editing of the table view.
