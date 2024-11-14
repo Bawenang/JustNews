@@ -8,8 +8,9 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import SegueManager
 
-class NewsListViewController: UITableViewController {
+class NewsListViewController: UITableViewController, SeguePerformer {
     
     private let viewModel: NewsListViewModel = {
         let getNews = MockGetNews()
@@ -18,6 +19,15 @@ class NewsListViewController: UITableViewController {
     
     private var newsList = [NewsItem]()
     private let disposeBag = DisposeBag()
+    
+    lazy var segueManager: SegueManager = {
+      // SegueManager based on the current view controller
+      return SegueManager(viewController: self)
+    }()
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      segueManager.prepare(for: segue)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +80,12 @@ class NewsListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showStory") { (story: NewsStoryViewController) in
+            story.news = self.newsList[indexPath.row]
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -105,15 +121,4 @@ class NewsListViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
