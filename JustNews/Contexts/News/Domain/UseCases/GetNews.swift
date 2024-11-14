@@ -12,7 +12,7 @@ protocol GetNewsUseCase {
     func retrieveAll() -> Observable<[NewsItem]>
 }
 
-class GetNews: GetNewsUseCase {
+class MockGetNews: GetNewsUseCase {
     func retrieveAll() -> RxSwift.Observable<[NewsItem]> {
         let mock = NewsItem(
             id: 1,

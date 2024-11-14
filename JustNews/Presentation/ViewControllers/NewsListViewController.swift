@@ -12,7 +12,7 @@ import RxSwift
 class NewsListViewController: UITableViewController {
     
     private var viewModel: NewsListViewModel = {
-        let getNews = GetNews()
+        let getNews = MockGetNews()
         return NewsListViewModel(getNews: getNews)
     }()
     
