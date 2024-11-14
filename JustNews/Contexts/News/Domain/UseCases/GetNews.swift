@@ -17,6 +17,7 @@ class MockGetNews: GetNewsUseCase {
         let mock = NewsItem(
             id: 1,
             title: "Test",
+            headline: "Test Headline",
             content: "Teststststa",
             publishDate: Date.now,
             thumbnail: URL(string: "https://dummyimage.com/200x200/753b01/suspendisse.png&text=jsonplaceholder.org"),
