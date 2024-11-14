@@ -12,6 +12,17 @@ protocol GetNewsUseCase {
     func retrieveAll() -> Observable<[NewsItem]>
 }
 
+class GetNews: GetNewsUseCase {
+    private let newsItemRepo: NewsItemRepositoring
+    init(newsItemRepo: NewsItemRepositoring) {
+        self.newsItemRepo = newsItemRepo
+    }
+    
+    func retrieveAll() -> RxSwift.Observable<[NewsItem]> {
+        return newsItemRepo.getAllPosts()
+    }
+}
+
 class MockGetNews: GetNewsUseCase {
     func retrieveAll() -> RxSwift.Observable<[NewsItem]> {
         let mock = NewsItem(
