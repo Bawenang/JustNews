@@ -6,11 +6,25 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class NewsListViewController: UITableViewController {
+    
+    private var viewModel: NewsListViewModel = {
+        let getNews = GetNews()
+        return NewsListViewModel(getNews: getNews)
+    }()
+    
+    private var newsList = [NewsItem]()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViewModel()
+        
+        viewModel.viewLoad.accept(())
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,6 +43,14 @@ class NewsListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+
+    private func setupViewModel() {
+        viewModel.newsList.drive(onNext: { [weak self] news in
+            self?.newsList = news
+            self?.tableView.reloadData()
+        })
+        .disposed(by: disposeBag)
     }
 
     /*
